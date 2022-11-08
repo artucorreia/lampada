@@ -26,13 +26,8 @@ function brk () {
 }
 
 // eventos
-let botaoLigar = window.document.getElementById('on');
-botaoLigar.addEventListener('click', OnOff);
-
-let botaoDesligar = window.document.getElementById('off');
-botaoDesligar.addEventListener('click', OnOff);
-
-// let btn = window.document.getElementById('OnOff');
+let btn = window.document.getElementById('btn');
+btn.addEventListener('click', OnOff);
 
 img.addEventListener('mouseenter', OnOff);
 img.addEventListener('mouseout', OnOff);

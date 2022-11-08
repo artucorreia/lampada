@@ -14,10 +14,7 @@ section {
     text-align: center;
 }
 
-div#inp {
-    padding: 2%;
-}
-
 input {
     width: 90px;
+    border-radius: 10px;
 }
