@@ -1,3 +1,4 @@
+// declaracao variaveis
 let img = window.document.getElementById('img');
 let estado = 1;
 
