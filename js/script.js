@@ -1,31 +1,36 @@
 let img = window.document.getElementById('img');
-let quebrada = false;
+let estado = 1;
 
 // funcoes on, off e break
-function on () {
-    if (quebrada != true) {
-        img.src = 'image/ligada.png';
-    }
-}
-
-function off () {
-    if (quebrada != true) {
-        img.src = 'image/desligada.png';
+function OnOff () {
+    if (estado != 3) {
+        switch (estado) {
+            case 1:
+                img.src = 'image/ligada.png';
+                estado = 2;
+                break;
+            case 2:
+                img.src = 'image/desligada.png';
+                estado = 1;
+                break;
+        }
     }
 }
 
 function brk () {
-    img.src = 'image/quebrada.png';
-    quebrada = true;
+    if (estado != 3) {
+        img.src = 'image/quebrada.png';
+        estado = 3;
+    }
 }
 
 // eventos
 let botaoLigar = window.document.getElementById('on');
-botaoLigar.addEventListener('click', on);
+botaoLigar.addEventListener('click', OnOff);
 
 let botaoDesligar = window.document.getElementById('off');
-botaoDesligar.addEventListener('click', off);
+botaoDesligar.addEventListener('click', OnOff);
 
-img.addEventListener('mouseenter', on);
-img.addEventListener('mouseout', off);
+img.addEventListener('mouseenter', OnOff);
+img.addEventListener('mouseout', OnOff);
 img.addEventListener('dblclick', brk);
